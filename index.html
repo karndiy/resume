@@ -35,9 +35,10 @@
                 <div class="col-10 col-sm-8 col-lg-6">
                     <img src="https://getbootstrap.com/docs/5.0/examples/heroes/bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6"  >
                     <p><h1 class="display-5 fw-bold lh-1 mb-3">RESUME </h1></p>
-                    <h1 class="display-5 fw-bold lh-1 mb-3">KARN LALOKKEAW {{ message }}</h1>
+                     <div v-for="user in myuser" ><h1 class="display-5 fw-bold lh-1 mb-3"> {{myUppercase(user.fname) }} {{myUppercase(user.lname)}}</h1></div>
+                    <!-- <div v-for="hob in hobbies" ><h1 class="display-5 fw-bold lh-1 mb-3"> {{hob.fav}} </h1></div>                    -->
                     <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                     <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
@@ -50,7 +51,10 @@
     <div class="b-example-divider"></div>
     <div>
         <h1>Axios Vuejs</h1>
-        {{ info }}
+        {{ myuser }}<hr>-------<hr>
+        {{ hobbies}}
+       
+  
     </div>
 
     <div class="b-example-divider"></div>
@@ -76,16 +80,28 @@
         createApp({
           data() {
             return {
-              message: 'Hello Vue!',
-              info: null
+              message: 'Hello Vue!',           
+              myuser: null,
+              hobbies:null
+            
+            }
+          }, 
+
+          methods:{
+            myUppercase: function (data) {	
+            return  data.toUpperCase();
             }
           },
-          
-            mounted () {
-                axios
-                .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-                .then(response => (this.info = response))
-            }
+                   
+          mounted () {
+            axios
+            //.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .get('http://localhost:3000/myuser')
+            .then(response => (
+              this.myuser = response.data.user,
+              this.hobbies = response.data.hobbies
+            ));
+          }
         }).mount('#app')
       </script>
   </body>

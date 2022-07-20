@@ -12,6 +12,12 @@ router.get('/',function(req,res){
   //__dirname : It will resolve to your project folder.
 });
 
+router.get('/myuser',function(req,res){
+  res.sendFile(path.join(__dirname+'/data.json'));
+  //__dirname : It will resolve to your project folder.
+});
+
+
 
 router.get('/user', function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for all origins!'})
