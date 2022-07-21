@@ -4,12 +4,36 @@
       {
         "fname": "Karn",
         "lname": "Lalokkeaw",
-        "bdate": "17/12/1992"
+        "bdate": "1982/12/17",       
+        "nation":"Thai",
+        "language":["Thai","English"],
+        "religion":"Buddhist",
+        "imguser_url":"https://4.bp.blogspot.com/-uSj7zZYJka0/W7b6HI0iiaI/AAAAAAAAB3s/mVVdnrUCVMIAK7FSJA_lysvv9nGH3knrgCLcBGAs/s800/cv.jpg",
+        "content":"Hello! I’m Karn. Senior Web Developer with over 13 years of experience specializing in Full Stack development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript, JQuery, VueJS. Strong background in management and leadership."
       }
     ],
+    "contactห":[
+      {
+        "address":"Thailand",
+        "mobile":"065-5659-178",
+        "email":"karndiy@gmail.com",
+        "lineid":"ppkl"
+      }
+    ],
+    "skill":[
+      {
+        "syntex":["VB.6","PHP","Python","Javascript","json","C","nodejs","html","css"],
+        "database":["Microsoft SQL (MSSQL)","SQLEXPRESS","MySQL","Friebase"],
+        "tools":["Visual Studio.NET (VS.NET)","Visual Studio Code (VS Code)","Sublime","Android Studio "],
+        "operation":["WINDOWS 1998,XP,VISTA,8,10,11","Windows Server 2006-2010"]
+      }
+    ],
+    "portfolio":[
+      
+    ],
     "hobbies": {
-      "fav":"Football",
-      "total": 1,
+      "Sport":"Football",
+     
       "perPage": 10,
       "lastPage": 1,
       "nextPageUrl": null,
