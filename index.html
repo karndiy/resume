@@ -11,7 +11,7 @@
     
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Hello, world!</title>
+    <title>Profile</title>
   </head>
   <body>
     <main id="app">
@@ -35,15 +35,16 @@
                 <div class="col-10 col-sm-8 col-lg-6" v-for="user in myuser">
                     <img v-bind:src="user.imguser_url" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
                 </div>
-                <div class="col-lg-6"  >
-                    <p><h1 class="display-5 fw-bold lh-1 mb-3">RESUME </h1></p>
-                     <div v-for="user in myuser" ><h1 class="display-5 fw-bold lh-1 mb-3"> {{myUppercase(user.fname) }} {{myUppercase(user.lname)}}</h1></div>
-                     <div v-for="user in myuser" ><h1 class="display-5 fw-bold lh-1 mb-3"> Brith : {{thaiDateAge(user.bdate) }}  </h1></div> <!-- <p>Age : {{getAge(user.bdate) }}</p>  -->
+                <div class="col-lg-6" v-for="user in myuser" >
+                    <p><h1 class="display-5 fw-bold lh-1 mb-3">PROFILE</h1></p>
+                     <div  ><h1 class="display-5 fw-bold lh-1 mb-3"> {{myUppercase(user.fname) }} {{myUppercase(user.lname)}}</h1></div>
+                     <div  ><h5 class="display-5 fw-bold lh-1 mb-3"> {{user.position}}</h5></div>
+                    <!-- <div v-for="user in myuser" ><h1 class="display-5 fw-bold lh-1 mb-3"> Age : {{getAge(user.bdate) }}  </h1></div>  <p> Birth : {{thaiDateAge(user.bdate) Age : {{getAge(user.bdate) }}</p>  -->
                     <!-- <div v-for="hob in hobbies" ><h1 class="display-5 fw-bold lh-1 mb-3"> {{hob.fav}} </h1></div>                    -->
                     <!-- <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p> -->
                     <p class="lead" v-for="user in myuser" >{{user.content}}</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">DownLoad CV</button>
                     <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
                     </div>
                 </div>
@@ -53,8 +54,14 @@
     <div class="b-example-divider"></div>
     <div>
         <h1>Axios Vuejs</h1>
-        {{ myuser }}<hr>-------<hr>
-        {{ hobbies}}      
+        {{ myuser }}
+        <hr>-------<hr>
+        {{contacts}}
+        <hr>-------<hr>
+        {{ skill }}  
+        <hr>-------<hr>
+        {{ hobbies}}  
+
   
     </div>
 
@@ -64,7 +71,7 @@
 
     <footer class="footer mt-auto py-3 bg-light">
       <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <span class="text-muted">© 2022 Karndiy, all rights reserved. Made with my Heart for a better web</span>
       </div>
     </footer>
     <!-- Optional JavaScript; choose one of the two! -->
@@ -85,7 +92,10 @@
             return {
               message: 'Hello Vue!',           
               myuser: null,
-              hobbies:null
+              hobbies:null,
+              skill:null,
+              contacts:null,
+              portfolio:null
             
             }
           }, 
@@ -123,7 +133,10 @@
             .get('http://localhost:3000/myuser')
             .then(response => (
               this.myuser = response.data.user,
-              this.hobbies = response.data.hobbies
+              this.hobbies = response.data.hobbies,
+              this.skill = response.data.skill,
+              this.contacts = response.data.contacts,
+              this.portfolio= response.data.portfolio
             ));
           }
         }).mount('#app')
