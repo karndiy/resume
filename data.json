@@ -29,20 +29,67 @@
         "operation":["WINDOWS 1998,XP,VISTA,8,10,11","Windows Server 2006-2010"]
       }
     ],
+
+    "education":[
+        {
+          "educational":"Westurn University",
+          "level":"Bachelor's degree",
+          "branch":"Computer Engineering",
+          "grade":"2.78"          
+        },
+        {
+          "educational":"WatbungThonglang high school",
+          "level":"high school ( m.4 - m.6 )",
+          "branch":"social art",
+          "grade":"2.72"          
+        },
+        {
+          "educational":"WatbungThonglang high school",
+          "level":"junior high school ( m.1 - m.3 )",
+          "branch":"basic",
+          "grade":"2.72"          
+        },
+        {
+          "educational":"Tangtung wittaya elementary school",
+          "level":"Grade 1-6",
+          "branch":"basic",
+          "grade":"2.62"          
+        }
+
+    ],
+
+    "experience":[
+      { 
+        "company":"SK Intergroup 2005 Co., Ltd.",
+        "position":"IT Subport & Programmer WEB Application",
+        "year":"2008-2019",
+        "detail":"Support  technology information for employee in department. Maintenain Hardware & Software organiztion. Develop Software for new technology.  "},
+      { 
+        "company":"port thailand",
+        "position":"Help desk",
+        "year":"2006-2008",
+        "detail":"call center Service for employee. Anylytic resson Hardware & Softwere in organization for Best work 24 hr."
+      },
+
+      { 
+        "company":"Sorpiboon ",
+        "position":"IT Subport",
+        "year":"2004-2006",
+        "detail":"Support  technology information for employee in department. Maintenain Hardware & Software organiztion."
+      },
+
+      {
+        "company":"Sorpaiboon Aluminum Construction Co., Ltd.",
+        "position":"IT Subport",
+        "year":"2004-2006",
+        "detail":"Support  technology information for employee in department. Maintenain Hardware & Software organiztion."
+      }      
+
+    ],
+
     "portfolio":[
       
     ],
-    "hobbies": {
-      "Sport":"Football",
-     
-      "perPage": 10,
-      "lastPage": 1,
-      "nextPageUrl": null,
-      "prevPageUrl": null,
-      "from": 1,
-      "to": 1,
-      "totalPages": 1,
-      "currentPage": 1,
-      "hasMorePages": false
-    }
+    "hobbies": ["Football","Swimming","Video GAME"]
+    
   }

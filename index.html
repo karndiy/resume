@@ -55,12 +55,19 @@
     <div>
         <h1>Axios Vuejs</h1>
         {{ myuser }}
-        <hr>-------<hr>
+        <br>--<hr>
         {{contacts}}
-        <hr>-------<hr>
+        <br>---<hr>
         {{ skill }}  
-        <hr>-------<hr>
+        <br>---<hr>
         {{ hobbies}}  
+        <br>---<hr>
+       
+        maindata<br>
+         {{ maindata}}
+        <!-- <div  v-for="user in maindata.data" >
+           <p> {{user.skill}}</p>
+        </div>  -->
 
   
     </div>
@@ -90,7 +97,8 @@
         createApp({
           data() {
             return {
-              message: 'Hello Vue!',           
+              message: 'Hello Vue!',  
+              maindata:null,         
               myuser: null,
               hobbies:null,
               skill:null,
@@ -128,10 +136,14 @@
           },
                    
           mounted () {
+            let respDataStr=null;
+          
             axios
             //.get('https://api.coindesk.com/v1/bpi/currentprice.json')
             .get('http://localhost:3000/myuser')
             .then(response => (
+             
+              this.maindata = response.data,
               this.myuser = response.data.user,
               this.hobbies = response.data.hobbies,
               this.skill = response.data.skill,
